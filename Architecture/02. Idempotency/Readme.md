@@ -2,9 +2,14 @@
 
 Idempotency is a simple idea that has far reaching consequences. If understood and applied correctly, it allows us to build highly fault tolerant and systems where retries are always safe. From a software engineering definition, idempotency should be thought of as:
 
-> The same input gives the same output
+> Same operation is run multiple times without an impact on subsequent runs.
+> The same input will always provide same output
 
-In practice, there are a variety of situations to understand and consider.
+## In practise
+
+From a RESTful service standpoint, for an operation (or service call) to be idempotent, clients can make that same call repeatedly while producing the same result. In other words, making multiple identical requests has the same effect as making a single request.
+
+For an API doing transactions, need to support for idempotency for users safely retrying requests without accidentally performing the same operation twice.
 
 ## Needed Tools
 
